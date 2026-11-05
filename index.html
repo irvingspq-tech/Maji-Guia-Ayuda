@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guía de ayuda con Maji — Vive Energía</title>
+<meta name="description" content="Orientación guiada y confidencial con Maji sobre violencia laboral, acoso y hostigamiento, basada en los documentos oficiales de Vive Energía.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='12' fill='%2312b878'/%3E%3Ccircle cx='10' cy='12' r='7' fill='%232b2f33'/%3E%3Ccircle cx='38' cy='12' r='7' fill='%232b2f33'/%3E%3Ccircle cx='24' cy='26' r='18' fill='%23fff'/%3E%3Cellipse cx='16.2' cy='23.5' rx='4.6' ry='5.6' fill='%232b2f33' transform='rotate(-18 16.2 23.5)'/%3E%3Cellipse cx='31.8' cy='23.5' rx='4.6' ry='5.6' fill='%232b2f33' transform='rotate(18 31.8 23.5)'/%3E%3Cellipse cx='24' cy='29.4' rx='3' ry='2.1' fill='%232b2f33'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Titillium+Web:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#eef7fb; --bg2:#f3fafd; --card:#ffffff; --line:rgba(0,111,173,.18);
+  --blue:#006fad; --cyan:#0090c9; --aqua:#79ecff; --green:#12b878; --green2:#1fae4b; --red:#d6405f; --orange:#ff7a45;
+  --text:#2d4756; --muted:#5f7886; --white:#0b3a56;
+  --h:'Montserrat',Arial,Helvetica,sans-serif; --b:'Titillium Web','Montserrat',Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{font-family:var(--b);font-size:18px;line-height:1.55;color:var(--text);background:var(--bg);min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;
+  background-image:radial-gradient(1100px 560px at 85% -10%,rgba(121,236,255,.55),transparent 60%),radial-gradient(800px 500px at -10% 110%,rgba(18,184,120,.22),transparent 60%);}
+h1,h2,h3,h4{font-family:var(--h);font-weight:700;color:var(--white);line-height:1.2}
+header.top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 28px;background:linear-gradient(100deg,#006fad,#0a9bc4 60%,#12b878);position:relative;z-index:2;box-shadow:0 4px 18px rgba(0,111,173,.25)}
+header.top svg{height:34px;width:auto;display:block}
+header.top .tag{font-family:var(--h);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#fff;text-align:right}
+main{flex:1;width:100%;max-width:860px;margin:0 auto;padding:22px 16px 18px;position:relative;z-index:2;display:flex}
+footer{position:relative;z-index:2;text-align:center;font-size:13px;color:var(--muted);padding:12px 20px 18px;border-top:1px solid var(--line);background:rgba(255,255,255,.85)}
+.scene-bg{position:fixed;left:0;right:0;bottom:0;height:150px;z-index:1;pointer-events:none;opacity:.55}
+.blade{transform-origin:center;transform-box:fill-box;animation:spin 14s linear infinite}
+.t2 .blade{animation-duration:19s}.t3 .blade{animation-duration:11s}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes rise{from{opacity:0;transform:translateY(10px)}}
+:focus-visible{outline:3px solid var(--cyan);outline-offset:3px}
+
+/* ===== Chat con Maji (misma estética del asistente del juego) ===== */
+.chat{flex:1;display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:0 24px 60px rgba(7,40,70,.20);overflow:hidden;height:calc(100vh - 175px);height:calc(100dvh - 175px);min-height:520px;animation:rise .4s}
+.maji-head{display:flex;align-items:center;gap:12px;padding:14px 18px;border-bottom:1px solid #e4eef3;background:#fff}
+.maji-av{flex:0 0 52px;height:52px;border-radius:15px;background:var(--green);display:grid;place-items:center;color:#fff}
+.maji-av svg{width:40px;height:40px}
+.maji-head h1{font-size:19px;display:flex;align-items:center;gap:8px;line-height:1.1;flex-wrap:wrap}
+.maji-head h1 span{font-size:10px;letter-spacing:.08em;text-transform:uppercase;background:#e3f7ef;color:#0b8a5a;border-radius:999px;padding:3px 8px;font-family:var(--h)}
+.maji-head p{font-size:14px;color:var(--muted);line-height:1.25;margin-top:3px}
+.tools{display:flex;gap:8px;padding:10px 16px;background:#fff;border-bottom:1px solid #e4eef3;flex-wrap:wrap}
+.tbtn{font-family:var(--h);font-weight:700;font-size:13px;letter-spacing:.02em;border-radius:999px;padding:9px 16px;cursor:pointer;transition:.2s;border:2px solid var(--green);background:var(--green);color:#fff}
+.tbtn:hover{background:#0fa46c;border-color:#0fa46c}
+.tbtn.ghost{background:transparent;color:var(--muted);border-color:#c5d6de}
+.tbtn.ghost:hover{background:#eef5f8}
+.maji-body{flex:1;overflow-y:auto;padding:18px 16px 10px;background:#f6fbfd;display:flex;flex-direction:column;gap:12px;scroll-behavior:smooth}
+.mb{max-width:88%;padding:12px 16px;border-radius:16px;font-size:16.5px;line-height:1.5;color:#23424f;animation:rise .3s}
+.mb.bot{align-self:flex-start;background:#fff;border:1px solid #dcebf2;border-top-left-radius:5px}
+.mb.me{align-self:flex-end;background:var(--green);color:#fff;border-top-right-radius:5px;font-weight:600}
+.mb b{color:#0b3a56}
+.mb ul,.mb ol{margin:6px 0 2px 20px}.mb li{margin:3px 0}
+.mb .tag{display:block;margin-top:8px;font-family:var(--h);font-size:11.5px;color:#0a85b8;letter-spacing:.02em}
+.mb .qn{display:block;margin-bottom:6px;font-family:var(--h);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--cyan)}
+.mb a{color:#0a85b8;font-weight:700}
+.mb.wide{max-width:96%}
+.typing{display:flex;gap:4px;padding:6px 4px}
+.typing i{width:7px;height:7px;border-radius:50%;background:#9cc3d4;animation:bnc 1s infinite}
+.typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}
+@keyframes bnc{50%{transform:translateY(-5px);opacity:.5}}
+.chips{display:flex;flex-direction:column;align-items:flex-start;gap:8px;margin-top:2px;transition:opacity .2s}
+.chips.out{opacity:0}
+.chip{font:inherit;font-size:15.5px;background:#fff;color:#0b3a56;border:1.5px solid var(--green);border-radius:999px;padding:9px 16px;cursor:pointer;text-align:left;transition:.15s;opacity:0;transform:translateY(6px);animation:chipin .35s ease forwards}
+.chip:hover{background:#e3f7ef}
+.chip.soft{border-color:#b7cdd8;color:var(--muted);font-size:14.5px}
+.chip.soft:hover{background:#eef5f8}
+.chip.stop{border-color:var(--orange);color:#a3441d;font-size:14.5px}
+.chip.stop:hover{background:#fff1ea}
+.chips .sep{height:1px;width:100%;background:transparent}
+@keyframes chipin{to{opacity:1;transform:none}}
+.mb.fade{opacity:0;transform:translateY(-4px);transition:opacity .18s,transform .18s}
+.mb.reveal{animation:reveal .45s cubic-bezier(.2,.7,.2,1)}
+@keyframes reveal{from{opacity:0;transform:translateY(8px) scale(.98)}to{opacity:1;transform:none}}
+.maji-foot{padding:10px 18px 12px;font-size:12.5px;line-height:1.35;color:var(--muted);background:#fff;border-top:1px solid #e4eef3}
+.maji-foot b{color:#0b3a56}
+
+/* tarjetas dentro del chat */
+.ccard{display:grid;gap:10px;margin-top:2px}
+.ccard section{background:linear-gradient(135deg,rgba(0,144,201,.10),rgba(18,184,120,.14));border:1px solid var(--line);border-radius:14px;padding:12px 14px}
+.ccard h4{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--cyan);margin-bottom:4px}
+.ccard section.ext{background:#fff8f3;border-color:rgba(255,122,69,.35)}
+.ccard section.ext h4{color:#a3441d}
+.ccard ul{margin:2px 0 0 18px}
+.ccard small{display:block;color:var(--muted);font-size:13.5px;line-height:1.35;margin-top:4px}
+
+.sum{display:grid;gap:12px}
+.sum h3{font-size:17px}
+.sum h4{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--cyan);margin:6px 0 2px}
+.sum .row{display:flex;gap:8px;justify-content:space-between;border-bottom:1px dashed #d3e5ee;padding:4px 0;font-size:15px}
+.sum .row span:first-child{color:var(--muted)}
+.sum .row span:last-child{text-align:right;font-weight:600;color:var(--white)}
+.sum label{display:block;font-size:14px;color:var(--muted);margin-top:8px}
+.sum textarea{width:100%;font:inherit;font-size:15px;border:1.5px solid #c5d6de;border-radius:10px;padding:8px 10px;min-height:54px;resize:vertical;color:var(--text);background:#fff}
+.sum .acts{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
+.sum .note{font-size:13.5px;color:var(--muted);background:#fff8f3;border:1px solid rgba(255,122,69,.3);border-radius:10px;padding:8px 10px}
+#printArea{display:none}
+
+@media (max-width:640px){
+  body{font-size:17px}
+  header.top{padding:14px 16px}header.top svg{height:26px}
+  header.top .tag{font-size:10px}
+  main{padding:12px 8px 10px}
+  .chat{height:calc(100dvh - 140px);min-height:480px;border-radius:18px}
+  .mb{max-width:94%;font-size:16px}
+  .maji-head{padding:12px 14px}
+  .tools{padding:8px 12px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.chip,.mb.reveal{opacity:1;transform:none}}
+
+@media print{
+  body{background:#fff!important;display:block}
+  header.top,main,footer,.scene-bg{display:none!important}
+  #printArea{display:block;font-size:13px;color:#000;padding:0}
+  #printArea h3{font-size:18px;margin-bottom:4px}
+  #printArea h4{font-size:11px;letter-spacing:.1em;text-transform:uppercase;margin:12px 0 3px;color:#006fad}
+  #printArea .row{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid #ccc;padding:3px 0}
+  #printArea .box{border:1px solid #999;border-radius:6px;min-height:46px;padding:6px 8px;white-space:pre-wrap}
+  #printArea p,#printArea li{margin:3px 0}
+  #printArea ul{margin-left:18px}
+}
+</style>
+</head>
+<body>
+<header class="top">
+  <svg role="img" aria-label="Vive Energía" xmlns="http://www.w3.org/2000/svg" width="198.712" height="43.761" viewBox="0 0 198.712 43.761">
+  <g id="logo_vive_energia_white" transform="translate(-667.612 -789.912)">
+    <path id="Trazado_721" data-name="Trazado 721" d="M697.034,827.929a13.24,13.24,0,1,1-13.24-13.24c.435,0,.865.022,1.289.062L686.676,812a16.177,16.177,0,1,0,13.18,13.951l-2.848,1.139q.026.415.027.836" transform="translate(0 -12.521)" fill="#fff"/>
+    <path id="Trazado_722" data-name="Trazado 722" d="M719.059,789.912s-.346,4.989-.663,6.257c0,0-13.062,7.879-13.69,18.671,0,0,.3-12.154,20.351-20.517a37.185,37.185,0,0,1-2.8,7.122s-15.089,4.7-17.359,13.961c0,0,2.9-11.6,25.721-14.106,0,0-8.622,14.072-22.823,15.485,0,0-2.422,0-2.989-.708,0,0-.99-1.065-.308-5.753.841-5.774,5.8-14.341,14.558-20.413" transform="translate(-21.016)" fill="#fff"/>
+    <path id="Trazado_723" data-name="Trazado 723" d="M934.788,837.833a4.048,4.048,0,0,0-1.012-2.123,3.99,3.99,0,0,0-2.777-.84,7.164,7.164,0,0,0-3.035.939,20.316,20.316,0,0,0-3.531,2.817l.682-3.352h-2.9l-3.239,16h2.895l2.072-10.158a20.25,20.25,0,0,1,1.8-1.611,13.514,13.514,0,0,1,1.566-1.073,5.558,5.558,0,0,1,1.254-.548,4.073,4.073,0,0,1,1.077-.156,2.093,2.093,0,0,1,1.385.365,1.689,1.689,0,0,1,.538,1,4.567,4.567,0,0,1-.017,1.571c-.106.63-.224,1.261-.35,1.877l-1.786,8.737h3.056l1.843-8.985c.131-.6.252-1.288.36-2.055a8.294,8.294,0,0,0,.119-2.4" transform="translate(-144.141 -25.781)" fill="#fff"/>
+    <path id="Trazado_724" data-name="Trazado 724" d="M1006.7,834.926l1.527-.04-.433,1.667c-.077.332-.161.654-.249.963l-.1.348a3.787,3.787,0,0,0-3.552.8,24.611,24.611,0,0,0-3.08,3.3l-1.9,9.287h-3.041l3.306-15.954h2.881l-.879,4.186.037-.044c.456-.546,1.639-2.215,2.165-2.674a6.38,6.38,0,0,1,3.322-1.844" transform="translate(-188.228 -25.789)" fill="#fff"/>
+    <path id="Trazado_725" data-name="Trazado 725" d="M1022.344,858.607a10.04,10.04,0,0,0,2.254.7,13.819,13.819,0,0,0,4.879-.028,8.724,8.724,0,0,0,2.716-1.033,7.965,7.965,0,0,0,2.352-2.089,8.8,8.8,0,0,0,1.688-3.613l3.272-16.52a13.066,13.066,0,0,0-5.6-1.04,11.321,11.321,0,0,0-3.7.6,10.866,10.866,0,0,0-3.11,1.668,9.921,9.921,0,0,0-2.169,2.569,9.022,9.022,0,0,0-1.3,3.2,11.008,11.008,0,0,0-.2,2.96,8.408,8.408,0,0,0,.515,2.886,4.976,4.976,0,0,0,1.56,2.035,4.642,4.642,0,0,0,2.723.78,7.707,7.707,0,0,0,3.353-1.214,15.114,15.114,0,0,0,2.356-1.918l-.542,3.463a9.3,9.3,0,0,1-.872,2.6s-2.287,4.732-9.4.886Zm4.165-13.383a8.036,8.036,0,0,1,.2-2.135,8.218,8.218,0,0,1,.863-2.28,6.178,6.178,0,0,1,1.18-1.781,7.326,7.326,0,0,1,2-1.327,6.556,6.556,0,0,1,2.314-.4,5.748,5.748,0,0,1,1.456.215,4.611,4.611,0,0,1,1.048.459,1.626,1.626,0,0,1,.479.309l.013.014-1.532,7.807a15.228,15.228,0,0,1-2.8,2.242,4.174,4.174,0,0,1-2.18.69c-3.125-.145-3.04-3.812-3.04-3.812" transform="translate(-203.413 -25.839)" fill="#fff"/>
+    <path id="Trazado_726" data-name="Trazado 726" d="M1079.276,816.75l-4.708,5.482h-2.354l3.868-5.482Z" transform="translate(-232.009 -15.39)" fill="#fff"/>
+    <path id="Trazado_727" data-name="Trazado 727" d="M1064.306,851.153h3.034l3.352-16.447h-3.034Z" transform="translate(-227.474 -25.686)" fill="#fff"/>
+    <path id="Trazado_728" data-name="Trazado 728" d="M1098.5,835.936a11.475,11.475,0,0,0-2.3-.723,12.435,12.435,0,0,0-2.9-.24,11.307,11.307,0,0,0-3.71.6,10.984,10.984,0,0,0-3.115,1.746,9.468,9.468,0,0,0-2.182,2.48,8.706,8.706,0,0,0-1.27,3.094,10.484,10.484,0,0,0-.3,2.975,8.33,8.33,0,0,0,.521,2.859,5.522,5.522,0,0,0,1.681,2.259c1.549,1.088,3.452,1.012,5.891-.416a27.851,27.851,0,0,0,2.6-2.1l-.595,2.841h2.941l3.112-15.211Zm-4.558,9.93s-2.936,3.392-5.157,3.095-2.856-2.341-2.8-3.987.456-5.574,3.809-7.2c0,0,3.392-1.449,5.574.555Z" transform="translate(-238.028 -25.84)" fill="#fff"/>
+    <path id="Trazado_729" data-name="Trazado 729" d="M1126.948,840.537v-1.869h.794a1.358,1.358,0,0,1,.436.051.428.428,0,0,1,.217.179.535.535,0,0,1,.081.294.5.5,0,0,1-.123.347.593.593,0,0,1-.37.173.877.877,0,0,1,.2.157,2.111,2.111,0,0,1,.215.3l.229.365h-.451l-.273-.407a2.545,2.545,0,0,0-.2-.275.291.291,0,0,0-.113-.078.624.624,0,0,0-.19-.021h-.076v.78Zm.378-1.079h.279a1.46,1.46,0,0,0,.339-.023.2.2,0,0,0,.106-.079.246.246,0,0,0,.039-.141.222.222,0,0,0-.051-.152.232.232,0,0,0-.142-.073c-.03,0-.123-.006-.276-.006h-.294Z" transform="translate(-263.395 -27.958)" fill="#fff"/>
+    <path id="Trazado_730" data-name="Trazado 730" d="M1126.321,840.194a1.932,1.932,0,1,1,1.931-1.932,1.933,1.933,0,0,1-1.931,1.932m0-3.387a1.455,1.455,0,1,0,1.455,1.455,1.457,1.457,0,0,0-1.455-1.455" transform="translate(-261.928 -26.618)" fill="#fff"/>
+    <path id="Trazado_731" data-name="Trazado 731" d="M765.831,839.237l1.252-2.268a1.963,1.963,0,0,1,1.717-1.014h2.048l-2.631,4.483q-.834,1.442-1.75,2.986t-1.8,3.032c-.589.995-1.173,1.963-1.737,2.878s-1.087,1.756-1.558,2.506l-.117.042H758.6l-2.717-15.927h3.1l1.945,13.282s3.009-6.538,4.9-10" transform="translate(-50.616 -26.403)" fill="#fff"/>
+    <path id="Trazado_732" data-name="Trazado 732" d="M822.055,839.237l1.252-2.268a1.964,1.964,0,0,1,1.718-1.014h2.048l-2.63,4.483q-.834,1.442-1.75,2.986t-1.8,3.032c-.589.995-1.173,1.963-1.737,2.878s-1.088,1.756-1.558,2.506l-.117.042h-2.662l-2.716-15.927h3.1l1.945,13.282s3.009-6.538,4.9-10" transform="translate(-82.856 -26.403)" fill="#fff"/>
+    <path id="Trazado_733" data-name="Trazado 733" d="M790.2,851.883h3.034l3.352-15.927h-3.034Z" transform="translate(-70.293 -26.403)" fill="#fff"/>
+    <path id="Trazado_734" data-name="Trazado 734" d="M802.76,820.428a2.039,2.039,0,1,1-2.039-2.038,2.039,2.039,0,0,1,2.039,2.038" transform="translate(-75.159 -16.33)" fill="#fff"/>
+    <path id="Trazado_735" data-name="Trazado 735" d="M894.508,842.839a4.043,4.043,0,0,0,2.635-4.847c-.706-3.138-4.457-2.991-4.457-2.991a8.384,8.384,0,0,0-3.461.7,9.545,9.545,0,0,0-2.738,1.843,10.209,10.209,0,0,0-1.948,2.6,11.331,11.331,0,0,0-1.073,2.969,11.074,11.074,0,0,0-.189,3.266,6.945,6.945,0,0,0,.839,2.743,5.038,5.038,0,0,0,1.919,1.914,5.876,5.876,0,0,0,2.937.693,8.259,8.259,0,0,0,3.657-.859,12.433,12.433,0,0,0,2.806-1.761l.147-.139.245-2.194-.237.188a16.06,16.06,0,0,1-2.739,1.69,6.785,6.785,0,0,1-2.877.583,3.572,3.572,0,0,1-2.007-.613,3.413,3.413,0,0,1-1.125-1.337,4.166,4.166,0,0,1-.43-1.691,11.226,11.226,0,0,1,.047-1.681c5.773.11,8.048-1.082,8.048-1.082m-4.91-5.067a4.484,4.484,0,0,1,3.61-.278,2.143,2.143,0,0,1,.737,3.15c-1.307,1.91-7.152,1.5-7.152,1.5a5.934,5.934,0,0,1,2.8-4.377" transform="translate(-123.641 -25.854)" fill="#fff"/>
+    <path id="Trazado_736" data-name="Trazado 736" d="M971.469,842.839a4.042,4.042,0,0,0,2.635-4.847c-.706-3.138-4.456-2.991-4.456-2.991a8.384,8.384,0,0,0-3.461.7,9.536,9.536,0,0,0-2.738,1.843,10.2,10.2,0,0,0-1.948,2.6,11.3,11.3,0,0,0-1.073,2.969,11.071,11.071,0,0,0-.189,3.266,6.957,6.957,0,0,0,.839,2.743A5.05,5.05,0,0,0,963,851.04a5.879,5.879,0,0,0,2.937.693,8.26,8.26,0,0,0,3.657-.859,12.427,12.427,0,0,0,2.805-1.761l.148-.139.245-2.194-.237.188a16.1,16.1,0,0,1-2.739,1.69,6.785,6.785,0,0,1-2.877.583,3.571,3.571,0,0,1-2.007-.613,3.407,3.407,0,0,1-1.125-1.337,4.151,4.151,0,0,1-.431-1.691,11.12,11.12,0,0,1,.047-1.681c5.772.11,8.047-1.082,8.047-1.082m-4.909-5.067a4.482,4.482,0,0,1,3.609-.278,2.143,2.143,0,0,1,.738,3.15c-1.307,1.91-7.152,1.5-7.152,1.5a5.933,5.933,0,0,1,2.806-4.377" transform="translate(-167.772 -25.854)" fill="#fff"/>
+    <path id="Trazado_737" data-name="Trazado 737" d="M857.676,842.839a4.042,4.042,0,0,0,2.635-4.847c-.706-3.138-4.456-2.991-4.456-2.991a8.386,8.386,0,0,0-3.461.7,9.532,9.532,0,0,0-2.737,1.843,10.2,10.2,0,0,0-1.949,2.6,11.33,11.33,0,0,0-1.073,2.969,11.045,11.045,0,0,0-.188,3.266,6.929,6.929,0,0,0,.839,2.743,5.04,5.04,0,0,0,1.919,1.914,5.879,5.879,0,0,0,2.937.693,8.258,8.258,0,0,0,3.657-.859,12.423,12.423,0,0,0,2.805-1.761l.148-.139.245-2.194-.238.188a16.073,16.073,0,0,1-2.739,1.69,6.784,6.784,0,0,1-2.876.583,3.573,3.573,0,0,1-2.007-.613,3.407,3.407,0,0,1-1.125-1.337,4.138,4.138,0,0,1-.43-1.691,11.154,11.154,0,0,1,.047-1.681c5.772.11,8.047-1.082,8.047-1.082m-4.909-5.067a4.483,4.483,0,0,1,3.609-.278,2.143,2.143,0,0,1,.737,3.15c-1.307,1.91-7.151,1.5-7.151,1.5a5.935,5.935,0,0,1,2.805-4.377" transform="translate(-102.521 -25.854)" fill="#fff"/>
+  </g>
+</svg>
+  <span class="tag">Guía de ayuda · Violencia laboral</span>
+</header>
+
+<svg class="scene-bg" viewBox="0 0 1200 150" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+  <path d="M0 150 L0 128 Q150 108 300 124 T600 118 T900 126 T1200 112 L1200 150Z" fill="#bfe3d6"/>
+  <g stroke="#7fb6cf" stroke-width="3" fill="none">
+    <path d="M180 124 V54"/><path d="M640 120 V40"/><path d="M1000 124 V62"/>
+  </g>
+  <g class="t1"><g class="blade" stroke="#0090c9" stroke-width="3" stroke-linecap="round" opacity=".7"><path d="M180 54 L180 14 M180 54 L214 74 M180 54 L146 74"/></g></g>
+  <g class="t2"><g class="blade" stroke="#0090c9" stroke-width="3.5" stroke-linecap="round" opacity=".7"><path d="M640 40 L640 -6 M640 40 L680 63 M640 40 L600 63"/></g></g>
+  <g class="t3"><g class="blade" stroke="#0090c9" stroke-width="3" stroke-linecap="round" opacity=".7"><path d="M1000 62 L1000 26 M1000 62 L1031 80 M1000 62 L969 80"/></g></g>
+</svg>
+
+<main>
+  <section class="chat" aria-label="Conversación con Maji">
+    <div class="maji-head">
+      <div class="maji-av" data-maji></div>
+      <div><h1>Maji <span>Guía de ayuda</span></h1><p>Orientación confidencial · Vive Energía</p></div>
+    </div>
+    <div class="tools">
+      <button class="tbtn" id="btnHelp" type="button">Hablar con una persona</button>
+      <button class="tbtn ghost" id="btnClear" type="button">Borrar conversación</button>
+    </div>
+    <div class="maji-body" id="body" role="log" aria-live="polite" aria-relevant="additions"></div>
+    <div class="maji-foot"><b>Maji no recibe denuncias</b> ni sustituye al Comité. Nada de esta conversación se guarda ni se envía: se borra al cerrar la página. Basado en VE-5-PR-04, VE-5-PO-04, VE-5-I-04 y VE-5-PO-03.</div>
+  </section>
+</main>
+<footer>© Vive Energía · Guía informativa. Orienta, no diagnostica ni sustituye el análisis del Comité de Atención y Seguimiento.</footer>
+<div id="printArea" aria-hidden="true"></div>
+
+<script>
+const MAJI_SVG='<svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="10" cy="12" r="7" fill="#2b2f33"/><circle cx="38" cy="12" r="7" fill="#2b2f33"/><circle cx="24" cy="26" r="18" fill="#ffffff"/><ellipse cx="16.2" cy="23.5" rx="4.6" ry="5.6" fill="#2b2f33" transform="rotate(-18 16.2 23.5)"/><ellipse cx="31.8" cy="23.5" rx="4.6" ry="5.6" fill="#2b2f33" transform="rotate(18 31.8 23.5)"/><circle cx="16.8" cy="23.2" r="2" fill="#fff"/><circle cx="31.2" cy="23.2" r="2" fill="#fff"/><circle cx="17.2" cy="23.4" r="1.1" fill="#2b2f33"/><circle cx="30.8" cy="23.4" r="1.1" fill="#2b2f33"/><ellipse cx="10.8" cy="31" rx="2.8" ry="1.8" fill="#f7a3b3" opacity=".8"/><ellipse cx="37.2" cy="31" rx="2.8" ry="1.8" fill="#f7a3b3" opacity=".8"/><ellipse cx="24" cy="29.4" rx="3" ry="2.1" fill="#2b2f33"/><path d="M24 31.4v2M24 33.4c-1.2 1.6-3.2 1.6-4.2.4M24 33.4c1.2 1.6 3.2 1.6 4.2.4" stroke="#2b2f33" stroke-width="1.4" fill="none" stroke-linecap="round"/></svg>';
+document.querySelectorAll('[data-maji]').forEach(e=>e.innerHTML=MAJI_SVG);
+
+const $body=document.getElementById('body');
+const REDUCED=matchMedia('(prefers-reduced-motion:reduce)').matches;
+const wait=ms=>new Promise(r=>setTimeout(r,REDUCED?0:ms));
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+let ctx, token=0;
+function resetCtx(){ctx={who:null,type:null,a:{},skips:0,qn:0,qtotal:5,resume:null,lastQ:null,busy:false,hubSeen:false}}
+resetCtx();
+const p=(a,b)=>ctx.who==='other'?b:a;
+
+/* ---------- utilidades de chat ---------- */
+function add(cls,html){const d=document.createElement('div');d.className='mb '+cls;d.innerHTML=html;$body.appendChild(d);return d}
+function scrollTo(el,top){
+  const y=top&&el?Math.max(0,el.offsetTop-12):$body.scrollHeight;
+  $body.scrollTo({top:y,behavior:REDUCED?'auto':'smooth'});
+}
+async function botSay(html,wide){
+  const my=token;
+  const t=add('bot','<div class="typing" aria-label="Maji está escribiendo"><i></i><i></i><i></i></div>');
+  scrollTo(t,false);
+  await wait(Math.min(1100,450+html.length*1.2));
+  if(my!==token)return;
+  t.classList.add('fade');await wait(160);
+  if(my!==token)return;
+  t.innerHTML=html;t.classList.remove('fade');t.classList.add('reveal');
+  if(wide)t.classList.add('wide');
+  scrollTo(t,true);
+  await wait(350);
+}
+
+/* ---------- tarjetas reutilizables ---------- */
+const CONTACTS=()=>`<div class="ccard">
+<section><h4>Dentro de Vive Energía</h4><ul>
+<li><b>Correo confidencial:</b> <a href="mailto:denuncias@viveenergia.com">denuncias@viveenergia.com</a></li>
+<li><b>Teléfonos:</b> <a href="tel:+529992197812">99 9219 7812</a> · <a href="tel:+525585547868">55 8554 7868</a></li>
+<li><b>En persona:</b> la Secretaría Ejecutiva (Recursos Humanos), una persona consejera o cualquier integrante del Comité.</li>
+</ul><small>Una denuncia verbal o telefónica se documenta y se ratifica por escrito para iniciar el procedimiento formal. Hablar con una persona consejera te orienta y no te obliga a denunciar.</small></section>
+<section><h4>Fuera de Vive Energía</h4><ul>
+<li><b>PROFEDET:</b> asesoría laboral gratuita.</li>
+<li><b>Centro Federal de Conciliación</b> o centro local, y <b>tribunales laborales</b>.</li>
+<li><b>Fiscalías</b> (FGR o estatales) si la conducta puede ser un delito.</li>
+<li><b>CONAPRED</b> y <b>Secretaría de las Mujeres</b> (orientación y queja por discriminación).</li>
+</ul><small>Puedes acudir a estas vías en lugar de, o al mismo tiempo que, el proceso interno.</small></section>
+<section class="ext"><h4>Apoyo externo · no forma parte de los documentos de Vive</h4><ul>
+<li><b>Emergencias:</b> 911</li>
+<li><b>Línea de la Vida</b> (apoyo emocional): 800 911 2000</li>
+</ul></section>
+</div><span class="tag">📖 Protocolo VE-5-PR-04 · 9.1 y 11 · Política VE-5-PO-04 · 5.4</span>`;
+
+const RULES=`<b>Reglas de oro</b> de la Guía:<ul>
+<li><b>Respeta el espacio personal.</b> Un saludo de beso o hablar muy cerca incomoda a algunas personas.</li>
+<li><b>No supongas.</b> Lo normal para ti puede no serlo para otra persona; si dudas, abstente o pregunta.</li>
+<li><b>Consentimiento:</b> libre, claro, consciente y siempre retirable.</li>
+<li><b>Comunica.</b> Si algo te incomoda, dilo. Si crees que vives violencia, puedes acudir al correo, a la Secretaría Ejecutiva o a una persona consejera. Está prohibida cualquier represalia contra quien denuncia de buena fe.</li></ul><span class="tag">📖 Guía VE-5-I-04 · 4.4</span>`;
+const YESNO=`<b>Sí puede ser violencia laboral:</b><ul><li>Gritos, insultos, burlas sobre el aspecto, críticas humillantes en público.</li><li>Mensajes o llamadas agresivas, o insistentes fuera de horario.</li><li>Tareas sin sentido o degradantes de forma reiterada; esconder o dañar tus materiales.</li><li>Contacto físico o comentarios sexuales no deseados; excluir o discriminar.</li></ul><b>Por sí mismo, no lo es:</b><ul><li>Una llamada de atención firme y respetuosa, sin gritos ni humillaciones.</li><li>Una tarea distinta por una emergencia justificada.</li><li>Un saludo consentido, o un retraso justificado.</li></ul>Un solo evento grave también puede serlo.<span class="tag">📖 Guía VE-5-I-04 · 4.3</span>`;
+
+/* ---------- nodos de conversación ---------- */
+const N={};
+const chipBack={t:'Ver otras opciones',go:'hub'};
+
+N.start={
+ say:()=>[
+ `¡Hola! Soy <b>Maji</b>. Estoy aquí para orientarte si algo en el trabajo no se siente bien: algo que viviste, que viste o que te preocupa. Sin prisa.`,
+ `Antes de empezar, tres cosas:<ul><li><b>Tú llevas el ritmo.</b> Puedes saltar cualquier pregunta o parar cuando quieras.</li><li><b>No te pediré nombres, fechas ni detalles.</b> Solo tocarás opciones.</li><li><b>Nada se guarda ni se envía.</b> Esta conversación vive solo en tu pantalla.</li></ul>`,
+ `Importante: <b>no recibo denuncias</b>, no diagnostico y no sustituyo al Comité de Atención y Seguimiento. Oriento con base en los documentos de Vive Energía. ¿Te parece si empezamos?`],
+ opts:()=>[
+ {t:'Sí, empecemos',go:'who'},
+ {t:'Solo quiero ver los contactos',go:'contacts',soft:1},
+ {t:'Mejor en otro momento',go:'later',soft:1}]};
+
+N.later={
+ say:()=>[`Está bien, sin presión. Aquí estaré cuando quieras. Y por si lo necesitas, estos son los medios de contacto:`,CONTACTS()],
+ opts:()=>[{t:'Empezar ahora',go:'who'},{t:'Borrar conversación',go:'clear',soft:1}]};
+
+N.contacts={
+ say:()=>[`Claro. Estas son las personas y los medios a los que puedes acudir, cuando tú quieras:`,CONTACTS()],
+ opts:()=>[
+ ctx.who?{t:'Ver otras opciones',go:'hub'}:{t:'Empezar la guía',go:'who'},
+ {t:'Saber cómo funciona el proceso',go:'process'},
+ {t:'Gracias, es todo',go:'close',soft:1}]};
+
+N.who={
+ say:()=>[`Gracias por querer platicarlo. ¿Desde dónde te acercas hoy?`],
+ opts:()=>[
+ {t:'Me está pasando, o me pasó, a mí',fn:()=>ctx.who='self',go:'type'},
+ {t:'Le pasa a otra persona y quiero ayudar',fn:()=>ctx.who='other',go:'type'},
+ {t:'Soy jefatura o tengo personas a mi cargo',fn:()=>ctx.who='lead',go:'lead'},
+ {t:'Alguien me señaló a mí',fn:()=>ctx.who='accused',go:'accused'},
+ {t:'Solo tengo curiosidad o dudas',fn:()=>ctx.who='curious',go:'curious'},
+ {t:'Prefiero no decirlo',fn:()=>ctx.who='self',go:'type',soft:1}]};
+
+const ROLE={self:'Me ocurrió a mí',other:'Le ocurre a otra persona y quiero apoyar',lead:'Soy jefatura',accused:'Me señalaron',curious:'Tengo curiosidad o dudas'};
+
+N.type={
+ say:()=>[p(
+  `Gracias por confiar en mí. <b>No necesito que me cuentes qué pasó.</b> Basta con que elijas, en términos generales, lo que más se parezca.`,
+  `Qué bueno que quieras apoyar. <b>No necesito nombres ni detalles.</b> Basta con que elijas, en general, lo que más se parezca a lo que viste o te contaron.`)],
+ opts:()=>[
+ {t:'Gritos, insultos, burlas o humillaciones',fn:()=>ctx.type='verbal',go:'q1'},
+ {t:'Mensajes o llamadas agresivas, o insistentes fuera de horario',fn:()=>ctx.type='digital',go:'q1'},
+ {t:'Comentarios, insinuaciones o contacto de tipo sexual no deseados',fn:()=>ctx.type='sexual',go:'severe'},
+ {t:'Golpes, empujones, amenazas o agresión física',fn:()=>ctx.type='fisica',go:'severe'},
+ {t:'Aislamiento, tareas sin sentido, quitar información o materiales',fn:()=>ctx.type='trabajo',go:'q1'},
+ {t:'Trato distinto por género, edad, origen, embarazo u otra condición',fn:()=>ctx.type='discr',go:'q1'},
+ {t:'Demasiada carga de trabajo, jornadas largas o falta de desconexión',fn:()=>ctx.type='psico',go:'psico'},
+ {t:'No sé cómo describirlo',fn:()=>ctx.type='nose',go:'q1'},
+ {t:'Prefiero no decirlo',fn:()=>ctx.type='nodice',go:'q1',soft:1}]};
+const TYPE={verbal:'Gritos, insultos, burlas o humillaciones',digital:'Mensajes o llamadas agresivas / insistentes',sexual:'Conducta de tipo sexual no deseada',fisica:'Agresión física o amenazas',trabajo:'Aislamiento, tareas sin sentido, retención de información',discr:'Trato distinto o discriminación',psico:'Carga de trabajo, jornadas o desconexión',nose:'No sé cómo describirlo',nodice:'Prefirió no decirlo'};
+
+N.severe={
+ say:()=>[
+ p(`Gracias por decírmelo; no es fácil. <b>No voy a pedirte detalles</b>, y no tienes por qué cargar con esto sola o solo.`,
+   `Gracias por decírmelo. <b>No voy a pedirte detalles</b>, ni tendrías que reconstruirlos. Es de lo más serio que contempla el Protocolo.`),
+ `Lo que conviene que sepas:<ul>
+ <li>Una <b>persona consejera</b> puede acompañar, si se desea. En casos de violencia sexual, o si se pide, <b>puede elegirse que sea hombre o mujer</b>.</li>
+ <li>El Comité evalúa <b>medidas de protección dentro de las primeras 24 horas</b>, sin prejuzgar.</li>
+ <li>No hay careos ni confrontación con la otra persona, y no se pide contar los hechos una y otra vez.</li>
+ <li>Las represalias están prohibidas y se sancionan.</li>
+ <li><b>Con transparencia:</b> en agresión física o violencia sexual, el Comité investiga <b>de oficio</b> aunque después alguien quiera desistirse. Es una forma de proteger a las personas.</li></ul><span class="tag">📖 Protocolo VE-5-PR-04 · 6, 8.2, 9.3 y 9.4</span>`,
+ `También se puede acudir a vías externas, como la fiscalía, en lugar de o junto con el proceso interno. <b>Si hay un peligro inmediato, llama al 911.</b>`],
+ opts:()=>[
+ {t:'Ver a quién puedo acudir',go:'contacts'},
+ {t:'Saber cómo funciona el proceso',go:'process'},
+ {t:'Si quiero, sigo con unas preguntas',go:'q1',soft:1},
+ {t:'Prefiero parar aquí',go:'stop',stop:1}]};
+
+N.psico={
+ say:()=>[
+ `Gracias. Lo que describes tiene que ver con <b>factores de riesgo psicosocial</b>, que Vive Energía se compromete a prevenir (NOM-035). Merece atención aunque no sea violencia.`,
+ `Algunos compromisos de la Política:<ul>
+ <li>Cargas de trabajo que <b>no excedan la capacidad</b> de cada persona; RH las evalúa en las descripciones de puesto.</li>
+ <li>Respetar la <b>jornada pactada</b> y el tiempo de comida (al menos media hora). El tiempo extra solo procede conforme al procedimiento VE-5-P-01.</li>
+ <li>Respetar los tiempos personales, incluido <b>no ser contactada o contactado durante las vacaciones</b>.</li>
+ <li>Liderazgo respetuoso: las jefaturas deben capacitarse para ello.</li></ul>Puedes plantearlo a Recursos Humanos o por el canal de denuncias.<span class="tag">📖 Política VE-5-PO-03 · 5.3 Compromisos por factor</span>`,
+ `Si además hay gritos, humillaciones u otro trato que te preocupe, podemos revisarlo juntas o juntos.`],
+ opts:()=>[
+ {t:'Revisemos también el trato',fn:()=>ctx.type='trabajo',go:'q1'},
+ {t:'Ver a quién puedo acudir',go:'contacts'},
+ {t:'Con esto me quedo, gracias',go:'close',soft:1}]};
+
+/* ---- preguntas (Guía 4.1) ---- */
+const ACKS=['','Gracias por responder. ','Entendido. ','Sigo con calma. ','Última, y listo. '];
+function qNode(id,key,n,textFn,opts,nextFn){
+  N[id]={q:true,key,
+   say:()=>{ctx.lastQ=id;ctx.qn++;
+     return [`<span class="qn">Pregunta ${ctx.qn} de ${ctx.qtotal} · puedes saltarla</span>${ACKS[Math.min(ctx.qn-1,4)]}${textFn()}`]},
+   opts:()=>opts(),next:nextFn};
+}
+const SN=(v,t)=>({t,v});
+qNode('q1','humil',1,
+ ()=>p('¿Lo que ocurrió incluyó gritos, críticas en público, burlas, ignorarte, amenazas o alguna forma de humillación o intimidación?',
+       '¿Lo que ocurrió incluyó gritos, críticas en público, burlas, ignorar a la persona, amenazas o alguna forma de humillación o intimidación?'),
+ ()=>[SN('si','Sí'),SN('mas','Algo así, no del todo'),SN('no','No'),SN('dk','No lo tengo claro')],
+ ()=>{const t=ctx.type;const has2=['trabajo','discr','nose','nodice'].includes(t);ctx.qtotal=has2?5:4;return has2?'q2':'q3'});
+qNode('q2','imposible',2,
+ ()=>p('¿Te asignaron objetivos imposibles de cumplir en el plazo, o tareas que no corresponden a tu puesto?',
+       '¿Le asignaron objetivos imposibles de cumplir en el plazo, o tareas que no corresponden a su puesto?'),
+ ()=>[SN('si','Sí'),SN('mas','A veces'),SN('no','No'),SN('dk','No lo tengo claro')],
+ ()=>'q3');
+qNode('q3','afecta',3,
+ ()=>p('¿Esto te puso en una posición incómoda o te afectó en el ánimo, el sueño, la concentración o la salud?',
+       '¿Esto la dejó en una posición incómoda o le afectó en el ánimo, el sueño, la concentración o la salud?'),
+ ()=>[SN('si','Sí, bastante'),SN('poco','Un poco'),SN('no','No'),SN('dk','No lo tengo claro')],
+ ()=>'q4');
+qNode('q4','freq',4,
+ ()=>'¿Fue una sola vez o ha pasado varias veces? <small style="color:var(--muted)">(Un solo evento grave también puede ser violencia.)</small>',
+ ()=>[SN('una','Una sola vez'),SN('rep','Varias veces'),SN('dk','No lo sé')],
+ ()=>'q5');
+qNode('q5','poder',5,
+ ()=>p('¿La otra persona tiene alguna relación de poder contigo, formal o informal?',
+       '¿La otra persona tiene alguna relación de poder con quien lo vive, formal o informal?'),
+ ()=>[SN('jefe','Es una jefatura o alguien de mayor nivel'),SN('par','Es un colega del mismo nivel'),SN('sub','Es alguien que depende de mí'),SN('ter','Es cliente, proveedor o contratista'),SN('no','No hay una relación de poder'),SN('dk','No lo sé')],
+ ()=>'reflect');
+const QL={humil:'Amenaza, intimidación o humillación',imposible:'Objetivos imposibles o fuera del puesto',afecta:'Afectación personal',freq:'Una vez o varias veces',poder:'Relación de poder'};
+
+N.pauseOffer={
+ say:()=>[`Noto que prefieres no responder algunas preguntas, y está perfecto: <b>no tienes que hacerlo</b>. Podemos seguir, ver información que sí puede servirte, o parar aquí. ¿Qué prefieres?`],
+ opts:()=>[
+ {t:'Seguir con las preguntas',go:()=>ctx.resume||'reflect'},
+ {t:'Ver otras opciones',go:'hub'},
+ {t:'Prefiero parar',go:'stop',stop:1}]};
+
+N.stop={
+ say:()=>[`Está bien parar, de verdad. <b>Lo que compartiste se queda contigo</b>: no se guardó ni se envió a nadie. Cuando quieras hablar con alguien, estas personas pueden escucharte:`,CONTACTS()],
+ opts:()=>[
+ ...(ctx.lastQ&&ctx.lastQ!=='done'?[{t:'Retomar donde íbamos',go:()=>ctx.lastQ,resumeQ:1}]:[]),
+ {t:'Ver otras opciones',go:'hub'},
+ {t:'Borrar conversación',go:'clear',soft:1}]};
+
+/* ---- reflejo ---- */
+function signals(){
+  const a=ctx.a,v=k=>a[k]&&a[k].v,s=[];
+  if(v('humil')==='si')s.push('Hubo conductas de amenaza, intimidación o humillación.');
+  else if(v('humil')==='mas')s.push('Hubo conductas que podrían ser intimidantes o humillantes.');
+  if(v('imposible')==='si')s.push('Se asignaron objetivos imposibles o tareas fuera del puesto.');
+  if(v('afecta')==='si'||v('afecta')==='poco')s.push('Hubo afectación en el ánimo, la salud o el trabajo.');
+  if(v('freq')==='rep')s.push('Se repitió en el tiempo (serie de incidentes).');
+  if(v('freq')==='una'&&v('humil')==='si')s.push('Aunque fue una sola vez, <b>un evento grave también puede ser violencia</b>.');
+  const pw={jefe:'Hay una relación de poder: una jefatura o mayor nivel (violencia descendente).',par:'Ocurre entre colegas del mismo nivel (violencia horizontal, que también cuenta).',sub:'Viene de una persona subordinada (violencia ascendente, que también cuenta).',ter:'Involucra a un tercero (cliente, proveedor o contratista), contemplado por el Protocolo.'};
+  if(pw[v('poder')])s.push(pw[v('poder')]);
+  if(ctx.type==='discr')s.push('El trato distinto por una condición personal puede ser <b>discriminación</b>, que el Protocolo también atiende.');
+  return s;
+}
+function answered(){return ['humil','imposible','afecta','freq','poder'].filter(k=>ctx.a[k]&&ctx.a[k].v!=='skip'&&ctx.a[k].v!=='dk').length}
+N.reflect={
+ enter:()=>{ctx.lastQ='done'},
+ say:()=>{
+  const s=signals(),n=answered(),out=[`Gracias por llegar hasta aquí. Esto es lo que veo, <b>como orientación y no como veredicto</b>:`];
+  if(n===0)out.push(`Me compartiste poco, y está bien: así es como querías hacerlo. Con tan pocos datos no puedo orientarte mucho, pero no cambia que, si algo te inquieta, puedes platicarlo con una persona consejera <b>sin compromiso de denunciar</b>.`);
+  else if(s.length>=2)out.push(`Hay <b>varios elementos</b> que la Guía señala como posible violencia laboral:<ul>${s.map(x=>`<li>${x}</li>`).join('')}</ul><span class="tag">📖 Guía VE-5-I-04 · 4.1 y 4.2</span>`);
+  else if(s.length===1)out.push(`Hay <b>algún elemento</b> que la Guía toma en cuenta:<ul><li>${s[0]}</li></ul>Con eso solo no se puede concluir mucho, pero merece que lo consultes con calma.<span class="tag">📖 Guía VE-5-I-04 · 4.1</span>`);
+  else out.push(`Por lo que elegiste, <b>no veo elementos claros</b> de violencia laboral. Recuerda que una llamada de atención firme y respetuosa, sin gritos ni humillaciones, no lo es por sí misma. Si algo aún te inquieta, también puede tratarse de un tema de ambiente o carga de trabajo, que Recursos Humanos atiende.<span class="tag">📖 Guía VE-5-I-04 · 4.3 · Política VE-5-PO-03</span>`);
+  out.push(`Quien determina si hay o no una conducta sancionable es el <b>Comité</b>, tras analizar cada caso. Y sea cual sea el resultado, <b>lo que sientes es válido</b> y puedes hablarlo con alguien.`);
+  return out},
+ opts:()=>[{t:'¿Qué puedo hacer ahora?',go:'hub'}]};
+
+/* ---- ramas por rol ---- */
+N.lead={
+ say:()=>[
+ `Gracias por acercarte; tu papel es clave. Según el Protocolo y la Política de Cero Tolerancia, las jefaturas deben <b>prevenir y atender de inmediato</b> cualquier situación de violencia en su equipo y <b>canalizarla al Comité</b>. Omitirlo también puede sancionarse.<span class="tag">📖 Protocolo VE-5-PR-04 · 12 · Política VE-5-PO-04 · 5.5 y 5.6</span>`,
+ `Algunas ideas prácticas, desde los principios del Protocolo:<ul>
+ <li><b>Escucha sin juzgar</b> y cree. No minimices ni normalices.</li>
+ <li><b>No investigues por tu cuenta</b> ni confrontes: eso le corresponde al Comité.</li>
+ <li>No pidas que cuenten todo otra vez (no revictimizar) y <b>guarda la confidencialidad</b>.</li>
+ <li>Respeta la decisión de la persona sobre cómo seguir, y acompáñala a la persona consejera si lo desea.</li>
+ <li>Cuida que no haya represalias.</li></ul>`],
+ opts:()=>[
+ {t:'¿Cómo canalizo un caso?',go:'contacts'},
+ {t:'Saber cómo funciona el proceso',go:'process'},
+ {t:'Ver otras opciones',go:'hub'}]};
+
+N.accused={
+ say:()=>[
+ `Gracias por escribirlo. Entiendo que puede generar preocupación. <b>El procedimiento existe para ser justo con todas las personas.</b> Tus derechos, según el Protocolo:<ul>
+ <li>Trato digno y <b>presunción de inocencia</b>.</li>
+ <li>Ser escuchada o escuchado, ofrecer pruebas y presentar tus argumentos (audiencia, defensa y réplica).</li>
+ <li>Recibir una <b>resolución fundada y motivada</b>, notificada sin demora.</li>
+ <li><b>Confidencialidad</b> de tus datos y no ser objeto de represalias.</li>
+ <li>Ninguna persona es sancionada sin haber sido escuchada y sin que los hechos se acrediten.</li></ul><span class="tag">📖 Protocolo VE-5-PR-04 · 6 y 9.5</span>`,
+ `Dos cosas útiles: si el Comité dicta <b>medidas de protección</b> (como no tener contacto entre las partes), conviene respetarlas, y puedes consultar al Comité o a Recursos Humanos para entender el proceso. Yo no puedo opinar sobre los hechos.`],
+ opts:()=>[
+ {t:'Saber cómo funciona el proceso',go:'process'},
+ {t:'Ver a quién puedo acudir',go:'contacts'},
+ {t:'Revisar las reglas de oro',go:'rules',soft:1}]};
+
+N.curious={
+ say:()=>[`¡Preguntar es una buena idea! Dudar es normal, y <b>preguntar no te compromete a nada</b>. Esto es lo básico:`,YESNO,RULES],
+ opts:()=>[
+ {t:'Quiero revisar una situación concreta',fn:()=>ctx.who='self',go:'type'},
+ {t:'Saber cómo funciona el proceso',go:'process'},
+ {t:'Ver a quién puedo acudir',go:'contacts'},
+ {t:'Con esto me quedo, gracias',go:'close',soft:1}]};
+
+/* ---- hub ---- */
+N.hub={
+ say:()=>{const s=ctx.hubSeen?['¿Quieres ver algo más?']:[`Esto es lo que puedes hacer ahora. No hay un orden ni una obligación; elige lo que te sirva.`];ctx.hubSeen=true;return s},
+ opts:()=>[
+ {t:'Ver a quién puedo acudir',go:'contacts'},
+ {t:'Saber qué pasa si hablo con el Comité',go:'process'},
+ {t:'Ver vías externas a Vive Energía',go:'ext'},
+ {t:'Repasar las reglas de oro',go:'rules'},
+ {t:'Llevarme un resumen (opcional)',go:'sumOffer'},
+ {t:'Terminar por ahora',go:'close',soft:1}]};
+
+N.rules={say:()=>[YESNO,RULES],opts:()=>[chipBack,{t:'Terminar por ahora',go:'close',soft:1}]};
+
+N.process={
+ say:()=>[
+ `Si decides hablar con el Comité, así funciona. <b>Tú sigues teniendo el control</b> de lo que cuentas:<ol>
+ <li>Se registra con una <b>clave única y acuse de recibo</b>, y se evalúan medidas de protección (24 h).</li>
+ <li>El Comité decide si la admite en <b>5 días hábiles</b>.</li>
+ <li>Entrevista con la persona afectada (con persona consejera si quiere), sin careos.</li>
+ <li>Se escucha a la otra parte y a testigos. La investigación <b>no excede 20 días hábiles</b>.</li>
+ <li>Dictamen, notificación por escrito, medidas y <b>seguimiento</b>, incluida la vigilancia de que no haya represalias.</li></ol><span class="tag">📖 Protocolo VE-5-PR-04 · 9.6 Etapas y plazos</span>`,
+ `Algunos detalles para decidir con información:<ul>
+ <li>Una denuncia <b>verbal</b> debe ratificarse por escrito para iniciar el procedimiento formal.</li>
+ <li>Un <b>reporte anónimo</b> no abre procedimiento formal, pero el Comité puede actuar de oficio y tomar medidas preventivas.</li>
+ <li>Si denuncia <b>un tercero</b>, la persona afectada debe ratificar en 10 días hábiles.</li>
+ <li>Puedes desistirte, salvo en agresión física, violencia sexual o flagrancia, que se investigan de oficio.</li>
+ <li>Nunca se te obligará a conciliar ni a tener contacto con la otra persona.</li>
+ <li>Cualquier prueba ayuda (mensajes, correos, testigos, constancias), pero <b>no es indispensable</b>: tu testimonio tiene especial relevancia.</li></ul><span class="tag">📖 Protocolo VE-5-PR-04 · 9.1 a 9.3, 10.1</span>`],
+ opts:()=>[{t:'Ver a quién puedo acudir',go:'contacts'},chipBack,{t:'Terminar por ahora',go:'close',soft:1}]};
+
+N.ext={
+ say:()=>[`Además del proceso interno, existen estas vías. Puedes usarlas <b>en lugar de, o al mismo tiempo que</b>, el Comité; el mecanismo interno no limita tu acceso a la justicia:<ul>
+ <li><b>Laboral:</b> PROFEDET (asesoría gratuita), Centro Federal de Conciliación y Registro Laboral, tribunales laborales.</li>
+ <li><b>Penal:</b> FGR o fiscalías estatales, si la conducta puede ser delito (hostigamiento o acoso sexual, lesiones, amenazas).</li>
+ <li><b>Civil:</b> juicio por daño moral.</li>
+ <li><b>Administrativa:</b> inspección de la STPS; queja ante CONAPRED; Secretaría de las Mujeres.</li></ul>La persona consejera puede canalizarte a estas instancias si lo pides.<span class="tag">📖 Protocolo VE-5-PR-04 · 11 Vías externas</span>`],
+ opts:()=>[{t:'Ver a quién puedo acudir',go:'contacts'},chipBack]};
+
+/* ---- resumen ---- */
+N.sumOffer={
+ say:()=>[`Puedo armarte una hoja con lo que elegiste aquí. <b>No se envía a nadie ni se guarda</b>: es solo para ti, para ordenar tus ideas o por si decides hablar con el Comité. <b>No es una denuncia.</b> ¿La quieres?`],
+ opts:()=>[{t:'Sí, prepárala',go:'sumShow'},{t:'No, gracias',go:'hub',soft:1}]};
+
+function dateStr(){return new Date().toLocaleDateString('es-MX',{day:'numeric',month:'long',year:'numeric'})}
+function sumData(){
+  const rows=[['Fecha de esta hoja',dateStr()],['Desde dónde me acerqué',ROLE[ctx.who]||'—']];
+  if(ctx.type)rows.push(['Tipo de situación (general)',TYPE[ctx.type]]);
+  Object.keys(QL).forEach(k=>{if(ctx.a[k])rows.push([QL[k],ctx.a[k].v==='skip'?'Prefirió no responder':ctx.a[k].l]);});
+  const s=signals().map(x=>x.replace(/<[^>]+>/g,''));
+  return {rows,signals:s};
+}
+const FIELDS=[['¿Qué ocurrió? (con tus palabras)','f1'],['¿Cuándo? (fechas aproximadas)','f2'],['¿Dónde? (lugar, medio o canal)','f3'],['¿Quiénes estuvieron involucradas o presenciaron?','f4'],['Pruebas que podrían ayudar (mensajes, correos, testigos, constancias)','f5']];
+const NEXT=['Hablar con una persona consejera o la Secretaría Ejecutiva no te obliga a denunciar.','Si decides denunciar: correo denuncias@viveenergia.com, teléfonos 99 9219 7812 / 55 8554 7868, o en persona (formato VE-5-F-34 o escrito libre).','Conserva mensajes y correos tal como están.','Hay vías externas (PROFEDET, fiscalías, CONAPRED) que puedes usar en paralelo.'];
+
+function sumCard(){
+  const d=sumData();
+  return `<div class="sum" id="sumCard">
+  <h3>Mi hoja de orientación</h3>
+  <div class="note">Hecha solo en este dispositivo. No se envió ni se guardó. <b>No es una denuncia.</b> Los campos de abajo son opcionales y desaparecen al cerrar la página, salvo que la imprimas o descargues.</div>
+  <h4>Lo que elegí compartir</h4>
+  ${d.rows.map(r=>`<div class="row"><span>${esc(r[0])}</span><span>${esc(r[1])}</span></div>`).join('')}
+  <h4>Lo que la Guía considera (orientativo)</h4>
+  ${d.signals.length?`<ul style="margin-left:18px">${d.signals.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`:'<p style="font-size:15px">Sin elementos suficientes para orientar. Esto no invalida lo que sientes.</p>'}
+  <p style="font-size:14px;color:var(--muted)">El Comité es quien determina si hay una conducta sancionable.</p>
+  <h4>Datos que suele pedir el formato de denuncia (opcional)</h4>
+  ${FIELDS.map(f=>`<label for="${f[1]}">${f[0]}</label><textarea id="${f[1]}"></textarea>`).join('')}
+  <h4>Siguientes pasos que podría considerar</h4>
+  <ul style="margin-left:18px;font-size:15px">${NEXT.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>
+  <div class="acts"><button class="tbtn" data-act="print" type="button">Imprimir / guardar PDF</button><button class="tbtn ghost" data-act="copy" type="button">Copiar texto</button><button class="tbtn ghost" data-act="txt" type="button">Descargar .txt</button></div>
+  </div>`;
+}
+function sumText(){
+  const d=sumData(),v=id=>(document.getElementById(id)||{}).value||'';
+  let t='MI HOJA DE ORIENTACIÓN · Vive Energía\n(Hecha en este dispositivo. No es una denuncia.)\n\n';
+  t+=d.rows.map(r=>`${r[0]}: ${r[1]}`).join('\n')+'\n\nLo que la Guía considera (orientativo):\n';
+  t+=(d.signals.length?d.signals.map(x=>'- '+x).join('\n'):'- Sin elementos suficientes para orientar.')+'\n\n';
+  t+='Datos (opcional)\n'+FIELDS.map(f=>`${f[0]}\n${v(f[1])||'—'}\n`).join('\n')+'\nSiguientes pasos:\n'+NEXT.map(x=>'- '+x).join('\n')+'\n';
+  return t;
+}
+function printSum(){
+  const d=sumData(),v=id=>esc((document.getElementById(id)||{}).value||'');
+  document.getElementById('printArea').innerHTML=`<h3>Mi hoja de orientación · Vive Energía</h3><p><i>Hecha en este dispositivo. No es una denuncia. Orienta; el Comité determina.</i></p>
+  <h4>Lo que elegí compartir</h4>${d.rows.map(r=>`<div class="row"><span>${esc(r[0])}</span><b>${esc(r[1])}</b></div>`).join('')}
+  <h4>Lo que la Guía considera (orientativo)</h4>${d.signals.length?`<ul>${d.signals.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`:'<p>Sin elementos suficientes para orientar.</p>'}
+  <h4>Datos (opcional)</h4>${FIELDS.map(f=>`<p><b>${f[0]}</b></p><div class="box">${v(f[1])}</div>`).join('')}
+  <h4>Siguientes pasos</h4><ul>${NEXT.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>
+  <p style="margin-top:10px;font-size:11px">Basado en VE-5-PR-04, VE-5-PO-04, VE-5-I-04 y VE-5-PO-03.</p>`;
+  window.print();
+  setTimeout(()=>{document.getElementById('printArea').innerHTML=''},500);
+}
+$body.addEventListener('click',async e=>{
+  const b=e.target.closest('[data-act]');if(!b)return;
+  const act=b.dataset.act,old=b.textContent;
+  if(act==='print')printSum();
+  if(act==='copy'){try{await navigator.clipboard.writeText(sumText());b.textContent='¡Copiado!'}catch(_){b.textContent='No se pudo copiar'}setTimeout(()=>b.textContent=old,1800)}
+  if(act==='txt'){const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([sumText()],{type:'text/plain;charset=utf-8'}));a.download='mi-hoja-de-orientacion.txt';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)}
+});
+N.sumShow={
+ say:()=>[`Aquí está. Puedes completar lo que quieras, o dejarlo en blanco, y luego imprimirla, copiarla o descargarla. <b>Si no la guardas, se borra al cerrar la página.</b>`,sumCard()],
+ wide:1,
+ opts:()=>[chipBack,{t:'Terminar por ahora',go:'close',soft:1}]};
+
+N.close={
+ enter:()=>{ctx.lastQ=null},
+ say:()=>[`Gracias por platicar conmigo. Hablar de esto ya es un paso, y lo que decidas hacer, al ritmo que tú quieras, está bien.`,
+ `Recuerda que siempre puedes escribir a <a href="mailto:denuncias@viveenergia.com">denuncias@viveenergia.com</a> o llamar al <a href="tel:+529992197812">99 9219 7812</a> / <a href="tel:+525585547868">55 8554 7868</a>. <b>Nadie puede tomar represalias</b> contra quien habla de buena fe. Cuídate.`],
+ opts:()=>[{t:'Ver otras opciones',go:'hub',soft:1},{t:'Borrar conversación',go:'clear'}]};
+
+N.clear={};
+
+/* ---------- motor ---------- */
+async function go(id){
+  const my=token;
+  if(id==='clear'){clearAll();return}
+  const n=N[id];if(!n)return;
+  ctx.busy=true;
+  if(n.enter)n.enter();
+  for(const m of n.say()){ if(my!==token)return; await botSay(m, n.wide || m.length>900 && false); }
+  if(my!==token)return;
+  showOpts(n);
+  ctx.busy=false;
+}
+function showOpts(n){
+  const w=document.createElement('div');w.className='chips';
+  let list=n.opts().slice();
+  if(n.q)list=list.concat([{t:'Prefiero no responder',skip:1,soft:1},{t:'Necesito parar',go:'stop',stop:1}]);
+  list.forEach((o,i)=>{
+    const b=document.createElement('button');b.type='button';
+    b.className='chip'+(o.soft?' soft':'')+(o.stop?' stop':'');
+    b.style.animationDelay=(i*45)+'ms';b.textContent=o.t;
+    b.onclick=()=>pick(n,o,w);
+    w.appendChild(b);
+  });
+  $body.appendChild(w);
+  scrollTo(w,false);
+  const first=w.querySelector('.chip');if(first)first.focus({preventScroll:true});
+}
+async function pick(n,o,w){
+  if(ctx.busy)return;ctx.busy=true;
+  w.classList.add('out');await wait(180);w.remove();
+  add('me',esc(o.t));
+  let dest=o.go;
+  if(o.fn)o.fn();
+  if(o.resumeQ){ctx.qn=Math.max(0,ctx.qn-1)}
+  if(n.q){
+    if(o.skip){ctx.a[n.key]={v:'skip',l:'Prefirió no responder'};ctx.skips++;dest=n.next()}
+    else if(o.v){ctx.a[n.key]={v:o.v,l:o.t};ctx.skips=0;dest=n.next()}
+    if(ctx.skips>=2&&dest!=='stop'){ctx.resume=dest;ctx.skips=0;dest='pauseOffer'}
+  }
+  if(typeof dest==='function')dest=dest();
+  await wait(350);
+  go(dest);
+}
+function clearAll(){
+  token++;$body.innerHTML='';resetCtx();
+  document.getElementById('printArea').innerHTML='';
+  go('start');
+}
+
+/* ---------- barra de herramientas ---------- */
+document.getElementById('btnHelp').onclick=async()=>{
+  const my=token;
+  const chips=$body.querySelector('.chips');
+  const d=document.createElement('div');d.className='mb bot reveal';
+  d.innerHTML=`Claro, aquí tienes los medios de contacto. Puedes retomar la conversación cuando quieras.`+CONTACTS();
+  if(chips)$body.insertBefore(d,chips);else $body.appendChild(d);
+  scrollTo(d,true);
+};
+document.getElementById('btnClear').onclick=clearAll;
+
+go('start');
+</script>
+</body>
+</html>
